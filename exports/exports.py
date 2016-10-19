@@ -82,7 +82,7 @@ class ExportsThread(QThread):
                                                       file_extension))
         try:
             csv_file = open(csv_filename, 'wb')
-            self.csv = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC)
+            self.csv = csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL)
             exp = ExportCSV(version, self.csv, self.inc_asd, self.closed_streets,
                             self.org, self.lang, self.code, self.db)
             self.signals.task_started.emit()
